@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading"><span style="display: none;">test text</span>Dom learning</h1>
+        <h2>lorem kdccXhzzzzzzzzzzz</h2>
+        <h2>lorem kdccXhzzzzzzzzzzz</h2>
+        <h2>lorem kdccXhzzzzzzzzzzz</h2>
+        <input type="password" name="" id="">
+        <p>Lorem ctetur expedita modi ab dignissimos cumque? </p>
+
+        <ul>
+            <li class="lists">two</li>
+            <li class="lists">one</li>
+            <li class="lists">three</li>
+            <li class="lists">four</li>
+            <!--
+            
+document.querySelector('ul')
+<ul>​…​</ul>​
+
+const my=document.querySelector('ul')
+undefined
+
+my.querySelector('li')
+<li>​…​</li>​
+
+const green=my.querySelector('li')
+undefined
+
+green.style.backgroundColor="green"
+'green'
+
+green.style.padding='25px'
+'25px'
+
+green.style.padding='10px'
+'10px'
+
+green.innerText
+'one'
+
+green.innerText='5'
+'5'
+
+green.innerText='five'
+'five' 
+
+
+-->
+        </ul>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- 
+window->document->html->head
+                      ->body
+ 
+            head-___->title ->text node
+                -___->meta  ->attribute
+
+            body-___->div->attribute
+                         -___->h1-___->attribute
+                                 -___->text node
+
+                         -___->p-___->text node
+
+-->
+
+
+
+<!-- 
+
+
+console.log(window)
+console.log(window.document)
+console.log(document) 
+console.dir(document)
+console.log(document.baseURI) 
+console.log(document.links) -> HTML collection
+console.log(document.links[2])-> 2nd property 
+
+//selecting an element
+document.getElementById('firsthead')  -> full tag
+
+//dom manipulation
+document.getElementById('firsthead').innerHTML='<h1>Shalini Budholiya</h1>'
+
+-->
+
+
+
+<!-- 
+
+
+
+
+
+document.getElementById('title')
+<h1 id=​"title" class=​"heading">​Dom learning​</h1>​
+
+document.getElementById('title').id
+'title'
+
+document.getElementById('title').class
+undefined
+
+document.getElementById('title').className
+'heading'
+
+document.getElementById('title').getAttribute
+ƒ getAttribute() { [native code] }
+
+
+document.getElementById('title').getAttribute('id')
+'title'
+
+document.getElementById('title').getAttribute('class')
+'heading'
+
+document.getElementById('title').setAttribute('class','test') 
+undefined 
+//overwrite krta hai
+
+document.getElementById('title').setAttribute('class','test heading')
+undefined  //dono test and heading become class
+
+
+const title=document.getElementById('title')
+undefined
+
+title
+<h1 id=​"title" class=​"test heading">​Dom learning​</h1>
+​
+title.style
+CSSStyleDeclaration {accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}
+
+title.style.backgroundColor='green'
+'green'
+
+title.style.padding='15px'
+'15px'
+
+title.style.borderRa='5px'
+'5px'
+
+title.style.borderRadius='5px'
+'5px'
+
+
+adding content
+
+title.innerText
+'Dom learning'
+
+
+title.textContent
+'Dom learning'
+
+difference--- in textcontent even the hidden elements get showed
+
+
+document.querySelector('h1')// gives the first h1 tag
+
+document.querySelector('p:first-child')
+
+document.querySelector('input [type="password"]')
+
+
+html collection and node list are different
+html collection is an array ie can use array operation like map, forEach etc.
+nodelist is list ie cant use array operation like map, forEach etc.
+
+
+-->

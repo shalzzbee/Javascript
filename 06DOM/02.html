@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- creating new elements in DOM and parent child relationship -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+
+<script>
+
+    //parent to child
+
+    const parent = document.querySelector('.parent');
+    // console.log(parent);//class
+    // console.log(parent.children);//html collection--almost array
+    // console.log(parent.children[1]);//<div>tuesday</div>
+    //console.log(parent.children[1].innerHTML);//tuesday
+
+
+    //printing values using for looop
+    for (let i = 0; i < parent.children.length; i++) {
+        //const element = parent.children[i];
+        //console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.color = "orange"
+
+    //accesing child
+    // console.log(parent.firstElementChild);//monday wala child
+    // console.log(parent.lastElementChild);//thursday
+
+    //child to parent
+
+    const child = document.querySelector('.day') //first element aa jaega
+    console.log(child);//monday
+    console.log(child.parentElement);//parent
+    console.log(child.nextElementSibling);//tuesday
+
+    //NODE LIST--(react)
+    console.log("nodes: ", parent.childNodes);
+    //nodes:  NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+    //complex structure-as every value has its significance (even comments, line breaks)
+
+
+
+
+
+
+</script>
+
+</html>

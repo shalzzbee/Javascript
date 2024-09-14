@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body style="background-color: #212121; color: rgb(243, 240, 237);">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+    //edit or remove elements in DOM
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language')
+            .appendChild(li);//adds the new element at the end--takes time as needs to traverse the whole tree
+
+    }
+    addLanguage("Python")
+    addLanguage("Typescript")
+
+    //optimized way
+
+    function addOptimizedLang(langNme) {
+        const li = document.createElement('li');
+        // const addText = document.createTextNode(langNme);
+        // li.appendChild(addText)
+        //Or directly
+        li.appendChild(document.createTextNode(langNme));
+        document.querySelector('.language')
+            .appendChild(li);//no need of traversing the whole tree
+    }
+
+    addOptimizedLang('Golang');
+
+
+
+    //edit
+
+    const secondlang = document.querySelector("li:nth-child(2)")
+    //secondlang.innerHTML = "Mojo"
+    //naya element
+    const newLi = document.createElement('li');
+    newLi.textContent = "Mojo";//not added
+    secondlang.replaceWith(newLi);
+
+
+    //another example
+
+    const firstlang = document.querySelector('li:first-child');
+    firstlang.outerHTML = '<li>Typescript</li>';//poora html likho
+
+
+
+    //remove
+    const lastlang = document.querySelector('li:last-child');
+    lastlang.remove();
+
+</script>
+
+</html>

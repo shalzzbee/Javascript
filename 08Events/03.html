@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Js</title>
+</head>
+
+<body>
+    <h1>Javascript</h1>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+
+
+    <script>
+        //setInterval
+
+
+        // setInterval(function () {
+        //     //console.log("Shalini", Date.now());//repetitve
+        // }, 1000)
+
+
+        //3 parametrs are there
+        const saydate = function (str) {
+            // console.log(str, "shalini", Date.now());
+        }
+        const itrvl = setInterval(saydate, 1000, "hi");
+        // clearInterval(itrvl);
+
+
+
+
+        let stopi;
+        const hi = function () {
+            console.log("hi shalini");
+        }
+        document.querySelector('.start').addEventListener('click', function () {
+            console.log("started");
+            stopi = setInterval(hi, 1000, "hi");
+        })
+
+
+
+
+        document.querySelector('.stop').addEventListener('click', function () {
+            clearInterval(stopi);
+            console.log("stopped");
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Js</title>
+</head>
+
+<body>
+    <h1>shalini</h1>
+    <button class="stop">stop</button>
+    <script>
+        //browser functions not of core js
+
+        //handler: TimerHandler---callback function
+
+        // setTimeout(function () {
+        //     console.log('Shalini');//after 2s nut only 1 time
+        // }, 2000)
+
+
+        const shalu = function () {
+            // console.log(('shalini2'));
+        }
+
+        setTimeout(shalu, 2000);
+
+
+
+        // const heading = document.querySelector('h1');
+        // heading.style.color = "blue";
+
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "Js learn"
+        }
+        const change = setTimeout(changeText, 2000);// after 2 sec
+
+        // clearTimeout(change)//needs refernece..setTimeout wont exceute
+
+
+
+        document.querySelector('.stop').addEventListener('click', function () {
+            clearTimeout(change);//to prevent the text from changing
+            console.log("stopped");
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #212121; color: beige;">
+    <h1>CLOSURE IN JS</h1>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+    <script>
+
+        //CLOSURE-
+        // it is a combination of a function bundled together(enclosed) with refereces to its surrounding state (the lexical environment).
+        //it gives you access to an outer function's scope from an inner function.
+        //in JS, closures are created everytime a function is created, at function 'creation time'.
+
+
+        //LEXICAL SCOPING--inner fun can access local variables of outer function
+
+        // function init() {
+        //     let name = "Mozilla";//name is a local variable created by init.
+
+        //     function displayName() {  //it is the inner function, that froms the closure
+        //         console.log(name); //use varibale declared in the parent function
+        //     }
+        //     displayName();
+        // }
+        // init();
+
+
+        // function outer() {
+        //     let username = 'shalini';
+        //     // console.log("OUTER SCERET", secret);////not accessible
+        //     function inner() {
+        //         let secret = "my123";
+        //         console.log("inner1 :", username);
+        //     }
+
+        //     function innerTwo() {
+        //         console.log("inner2 :", username);
+        //         // console.log(secret);//not accessible
+
+        //     }
+
+        //     inner();
+        //     innerTwo();
+        // }
+        // outer();
+        // //  console.log("too outer", username);//not defined
+
+
+
+
+
+
+        //+++++++++++++++++++++++CLOSURE+++++++++++++++++++++
+
+        // function makeFun() {
+        //     const name = 'Mozilla';
+
+        //     function displayName() {
+        //         console.log(name);//accessible
+        //     }
+        //     return displayName;//outer func ka poora scope jaega, poori memory jaegi
+        //     //sirf display name nahi jagea , poora function jaega poori lexical scoping jaegi
+        // }
+
+        // const myfunc = makeFun();
+        // myfunc();
+
+
+
+
+        //practical explanation
+
+
+        // document.getElementById('orange').onclick = () => {
+        //     document.body.style.backgroundColor = 'orange';
+        // }
+
+        // document.getElementById('green').onclick = () => {
+        //     document.body.style.backgroundColor = 'green';
+        // }
+
+
+
+        function clickHandler(color) {
+            // document.body.style.backgroundColor = `${color}`;
+
+            return function () {
+                document.body.style.backgroundColor = `${color}`; //lexical scope
+            }
+        }
+
+
+        document.getElementById('orange').onclick = clickHandler("orange");
+        document.getElementById('green').onclick = clickHandler("green");
+
+
+    </script>
+</body>
+
+</html>

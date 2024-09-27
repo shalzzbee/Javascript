@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body>
+    <button>Button clicked</button>
+
+    <script>
+
+        class React {
+            constructor() {
+                this.library = "React";
+                this.server = "https://localhost:300";
+
+                //requirement---reference of button and handle click
+                document
+                    .querySelector('button')
+                    .addEventListener('click', this.handleClick.bind(this));  //bind keyword--attach
+            }
+
+
+            handleClick() {
+                console.log(`button was click`);
+                console.log(this.server);//undefined as this ka reference kho gaya hai
+                console.log(this);//ye toh aagya button tag means this ka reference hai button ka
+
+
+                //use bind keyword--sabka access mil jaega variables and methods in react
+
+            }
+        }
+
+        const app = new React();
+
+
+    </script>
+</body>
+
+</html>
